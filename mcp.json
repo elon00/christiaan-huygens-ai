@@ -1,0 +1,54 @@
+{
+  "mcpServers": {
+    "christiaan-huygens-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "HUYGENS",
+        "TARGET_CHAIN": "Sui",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "propagate_huygens_wavefront",
+          "description": "Constructs envelope wavelets from secondary point sources across refractive interfaces",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "wavelength_nm": {
+                "type": "number"
+              },
+              "aperture_width_um": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "wavelength_nm"
+            ]
+          }
+        },
+        {
+          "name": "calculate_cycloidal_pendulum_period",
+          "description": "Computes strictly isochronous oscillation period along tautochrone cycloid path",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "pendulum_length_m": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "pendulum_length_m"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
